@@ -240,7 +240,7 @@ app.set("view engine", "ejs") //helps parse ejs
 app.use(express.static('public') ) //tells where to go for static files HTML/CSS
 app.use(express.urlencoded ( {extended:true} ) ) //how to handle URLs
 app.use(express.json() ) //allows use of JSON for objects
-//app.use(cors() ) //prevent cross object requests
+app.use(cors() ) //prevent cross object requests
 
 
 app.listen(process.env.PORT || PORT, () => {
