@@ -35,12 +35,12 @@ const cors = require('cors')
 require('dotenv').config()
 const PORT = 1111
 
-const majorArcana = {
-    1:{
+const majorArcana = { //setting up all the cards within an object (look at rappers-api for where I got inspiration from)
+    1:{ //I initally used the card's name for this, but then realized I'd have to do a lot of math to get the place in the object, so I decided just to number them so later the Math.random immediately references a card 
         cardFront: "The Fool",
         cardBack: "Beginnings, innocence, spontaneity, a free spirit",
-        imgurl: "https://philosopherswheel.com/foolB.jpg",
-        reversed: false
+        imgurl: "https://philosopherswheel.com/foolB.jpg", // borrowed images!
+        reversed: false // I added this for later when I want to be able to use CSS to flip the image upside down
     },
     2: {
         cardFront: "The Fool Reversed",
@@ -306,16 +306,16 @@ const majorArcana = {
 // returning ejs/html to the root
 app.get('/', async (request, response) => {
     try {
-        response.sendFile( __dirname + "/public/index.html")
+        response.sendFile( __dirname + "/public/index.html")//I decided I didn't need ejs because we're not looping through the objects and or array in a way that needs methods or whatever so html is good enough and kept me from getting confused
     } catch (error) {
         response.status(500).send({message: error.message})
     }
 }) 
 
 app.get('/newCard', async (request, response) =>{
-    let math = Math.ceil( Math.random() * 44)
+    let math = Math.ceil( Math.random() * 44) // honestly the same mechanic as my coin flip to get a random number 1-44
     try { 
-        response.json(majorArcana[math])
+        response.json(majorArcana[math]) //this is the heavy lifter using the random number generator, if there is a thing that is essentially withing the object majorArcana and the result of the math, send it back to the main.js as JSON.  If I had kept the card names, it would have had to read something like majorArcana[variable] variable == "The Moon" to be able to respond. Which would have required setting up whatever variable AND tying that varaible to the math. I preferred to skip that step, though it's probably not best practice (feels very baddie and I will not apologize). 
     } catch (error) {
         response.status(500).send({message: error.message})
     }
@@ -327,6 +327,7 @@ app.use(express.static('public') ) //tells where to go for static files HTML/CSS
 app.use(express.urlencoded ( {extended:true} ) ) //how to handle URLs
 app.use(express.json() ) //allows use of JSON for objects
 app.use(cors() ) //prevent cross object requests
+//I know you had trouble with cors and dotenv, I just had to re-install via npm.
 
 
 app.listen(process.env.PORT || PORT, () => {
