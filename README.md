@@ -10,7 +10,7 @@ Tech used: HTML, CSS, client side Javascript, Node.js, Express
 A very simple HTML scaffold for a card and a button. CSS styles the card and a borrowed animation provides a card "flip". Client side JS fires the CSS animation on card click and requests card information from server side JS (Node and Express) on button click and resets card text based on JSON response. On the server side I stored data about the tarot major arcana. A clientside fetch requests information for a random card which is provided as JSON. 
 
 ### Optimizations
-- style card to include card image.
+X style card to include card image. (completed 8/4/22)
 - figure out styling card for card image "reversed".
   - send information from server that card is "reversed".
 - less awkward/more efficient method to present text on card as card is drawn.
@@ -22,3 +22,4 @@ A very simple HTML scaffold for a card and a button. CSS styles the card and a b
 - method/data structure to get random card
 - multiple lessons on use of github
 - digesting JSON information and presenting to DOM.
+- CSS translate/transform
