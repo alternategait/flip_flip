@@ -1,5 +1,6 @@
 const card = document.getElementById('card')
 const button = document.getElementById('button')
+const image = document.querySelector("img")
 
 card.addEventListener('click', flipCard)
 button.addEventListener('click', newCard)
@@ -19,6 +20,8 @@ function newCard(){
             console.log(data);
             frontText = data.cardFront;
             backText = data.cardBack;
+            image.src=data.imgurl;
+            image.alt=data.cardFront;
             flipCard()
             flipCard()
         });
