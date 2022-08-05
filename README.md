@@ -14,9 +14,11 @@ A very simple HTML scaffold for a card and a button. CSS styles the card and a b
 
 ### Optimizations
 X style card to include card image. (completed 8/4/22)
+
 X figure out styling card for card image "reversed". (completed 8/5/22)
 - less awkward/more efficient method to present text on card as card is drawn.
 - further site styling.
+ 
  X host live site (completed 8/5/22)
 
 ### Lessons learned
