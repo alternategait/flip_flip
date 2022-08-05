@@ -21,6 +21,11 @@ function newCard(){
             backText = data.cardBack; // ditto but cardBack (description of card)
             image.src=data.imgurl;//reassigns image source as imgurl
             image.alt=data.cardFront;// reassigns image alt text as cardFront (name of card)
+            if(data.reversed === true){
+                image.classList.add('reversed');
+            }else if (data.reversed === false){
+                image.classList.remove("reversed")
+            }
             flipCard()
             flipCard()//this is the BADDIEST bit. The reassignment doesn't show up until the flip card function runs. So without this, it will still read "a card from major arcana" until you click the card which will change as the animation is running, so I put flipCard() twice so that the function runs, but you end up on the same "face" of the card and it changes the description (and if appropriate adds the image).
         })
