@@ -43,6 +43,9 @@ img{
     bottom: 0px;
     transform: translate(-50%, 0%);
 }
+.reversed{
+transform: rotate(180deg)translate( 50%, 0%);
+}
 
 .front{
     position: absolute;
