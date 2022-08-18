@@ -20,6 +20,7 @@ X figure out styling card for card image "reversed". (completed 8/5/22)
 - further site styling.
  
  X host live site (completed 8/5/22)
+ - improve architecture 
 
 ### Lessons learned
 - appropriate place for flipping function (client side js)
